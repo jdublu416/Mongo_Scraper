@@ -1,0 +1,51 @@
+/* body {
+} */
+
+header{
+    width: auto;
+    height: 500px;
+    background-color:#ab9276;
+    color: #503f44;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5em;
+    text-align: center;
+    background-image: url("../images/newspaper-595478__480.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+}
+/* #content{
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 5px;
+    grid-template-areas:
+      ". . header header. ."
+      ". aside aside main main ."
+      ". . section . . .";
+  } */
+
+
+#pageTitle{
+    font-size: 2.5em;
+}
+
+li{
+    display: inline;
+    list-style: none;
+}
+
+#articles{
+    background-color: #c9ba9b;
+}
+p{
+    background-color:#e3dac9;
+    height: 100px;
+    width: auto;
+    font-size: 1.5em;
+    margin: 5 50 5 50;
+}
+a{
+    color:#6f534f;
+}
