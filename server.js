@@ -18,7 +18,11 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/mongoscraperdb");
+// mongoose.connect("mongodb://localhost/mongoscraperdb");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraperdb";
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+
 //render the page with articles
 app.get("/", function(req, res) {
   db.Article.find({}).then(function(dbArticle) {
