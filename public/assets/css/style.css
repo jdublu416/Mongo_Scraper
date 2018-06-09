@@ -1,51 +1,83 @@
 /* body {
 } */
 
-header{
-    width: auto;
-    height: 500px;
-    background-color:#ab9276;
-    color: #503f44;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2.5em;
-    text-align: center;
-    background-image: url("../images/newspaper-595478__480.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    
+header {
+  width: auto;
+  height: 500px;
+  background-color: #ab9276;
+  color: #503f44;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5em;
+  text-align: center;
+  background-image: url("../images/newspaper-595478__480.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
-/* #content{
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    grid-gap: 5px;
-    grid-template-areas:
-      ". . header header. ."
-      ". aside aside main main ."
-      ". . section . . .";
-  } */
-
-
-#pageTitle{
-    font-size: 2.5em;
+#content {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 5px;
+  grid-template-areas:
+    "header header header header header header"
+    "header header header header header header"
+    "nav nav nav nav nav nav"
+    "main main main main section section"
+    "footer footer footer footer footer footer";
 }
 
-li{
-    display: inline;
-    list-style: none;
+header {
+  grid-area: header;
 }
 
-#articles{
-    background-color: #c9ba9b;
+nav {
+  grid-area: nav;
 }
-p{
-    background-color:#e3dac9;
-    height: 100px;
-    width: auto;
-    font-size: 1.5em;
-    margin: 5 50 5 50;
+
+main {
+  grid-area: main;
 }
-a{
-    color:#6f534f;
+
+section {
+  grid-area: section;
+ text-align: center;
+}
+
+footer {
+  grid-area: footer;
+}
+
+#pageTitle {
+  font-size: 2.0em;
+}
+
+li {
+  display: inline;
+  list-style: none;
+}
+
+#articles {
+  background-color: #c9ba9b;
+}
+p {
+  background-color: #e3dac9;
+  height: 100px;
+  width: auto;
+  font-size: 1.5em;
+  margin: 5 50 5 50;
+}
+a {
+  color: #6f534f;
+}
+#titleinput{
+    align-content: center;
+}
+#body-input{
+    align-content: center;
+    margin-top: 10px;
+}
+
+#savenote{
+    margin-left: 25px;
 }

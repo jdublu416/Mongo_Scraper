@@ -19,18 +19,15 @@ app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/mongoscraperdb");
-
+//render the page with articles
 app.get("/", function(req, res) {
   db.Article.find({}).then(function(dbArticle) {
-    // console.log(dbArticle);
-    // var hbsObject = {
-    //   articles: dbArticle
-    // };
-    // console.log(hbsObject);
+   
     res.render("index", dbArticle);
   });
 });
 
+//scrape nytimes website for articles to site
 app.get("/scrape", function(req, res) {
   axios.get("https://www.nytimes.com/").then(function(response) {
     var $ = cheerio.load(response.data);
@@ -62,15 +59,7 @@ app.get("/scrape", function(req, res) {
   });
 });
 
-// app.get("/", function(req, res) {
-//   db.Article.find({})
-//     .then(function(dbArticle) {
-//       res.render("articles", result);
-//     })
-//     .catch(function(err) {
-//       res.json(err);
-//     });
-// });
+
 
 app.get("/articles", function(req, res) {
   db.Article.find({})
