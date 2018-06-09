@@ -1,6 +1,6 @@
 $.getJSON("/articles",function(data){
     for(var i = 0; i < 20; i++){
-        $("#articles").prepend("<p data_id'" + data[i]._id + "'>"
+        $("#articles").append("<p data_id'" + data[i]._id + "'>"
          + data[i].title + "<br/>"+ "<a>"+data[i].link+"</a>" + "</p>");
     }
 });
@@ -16,7 +16,7 @@ $(document).on("click", "p", function(){
         console.log(data);
         $("#notes").append("<h2>"+ data.title + "</h2>");
         $("#notes").append("<input id='titleinput' name='title' >");
-        $("#notes").append("<textarea id ='body-input' name='body'></textarea>");
+        $("#notes").append("<textarea id ='bodyinput' name='body'></textarea>");
         $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
         if (data.note){
